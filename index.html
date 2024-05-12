@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Generátor ID</title>
+    <script src="index.js"></script>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <h1>Generátor ID</h1>
+      <form onsubmit="generateAndDisplayCode(); return false;">
+        <div>
+          <label class="jmeno">Jméno:</label>
+          <input
+            type="text"
+            id="jmeno"
+            name="jmeno"
+            oninput="removeAccents(this)"
+          />
+        </div>
+        <div>
+          <label class="prijmeni">Příjmení:</label>
+          <input
+            type="text"
+            id="prijmeni"
+            name="prijmeni"
+            oninput="removeAccents(this)"
+          />
+        </div>
+        <div>
+          <label class="rok_narozeni">Rok narození:</label>
+          <input type="number" id="datum_narozeni" />
+        </div>
+        <div>
+          <input type="submit" value="Generovat ID" />
+        </div>
+      </form>
+      <div id="kod-container"></div>
+    </div>
+  </body>
+</html>
