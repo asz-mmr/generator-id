@@ -28,7 +28,7 @@ var letterToNumber = {
 };
 
 // funkce pro vygenerování kódu:
-function generateCode(firstName, lastName, birthYear) {
+function generateCode(firstName, lastName, birthDay) {
   var code = '';
 
   // převedení písmen na čísla podle mapovací tabulky:
@@ -44,7 +44,7 @@ function generateCode(firstName, lastName, birthYear) {
   }
 
   // přidání roku narození na konec vygenerovaného kódu:
-  code += birthYear;
+  code += birthDay;
 
   return code;
 }
@@ -53,21 +53,21 @@ function generateCode(firstName, lastName, birthYear) {
 function generateAndDisplayCode() {
   var firstName = document.getElementById('jmeno').value;
   var lastName = document.getElementById('prijmeni').value;
-  var birthYear = document.getElementById('datum_narozeni').value;
+  var birthDay = document.getElementById('datum_narozeni').value;
 
   // ověření, že jsou vyplněna všechna pole formuláře:
-  if (firstName === '' || lastName === '' || birthYear === '') {
+  if (firstName === '' || lastName === '' || birthDay === '') {
     alert('Vyplňte, prosím, všechna pole formuláře.');
     return; // ukončení funkce, pokud nejsou všechna pole vyplněná
   }
 
-  // ověření, zda je rok narození platný (má právě 4 číslice):
-  if (birthYear.length !== 4 || isNaN(parseInt(birthYear))) {
-    alert('Zadejte, prosím, platný rok narození.');
-    return; // ukončení funkce, pokud rok narození není platný
-  }
+  // // ověření, zda je rok narození platný (má právě 4 číslice):
+  // if (birthYear.length !== 4 || isNaN(parseInt(birthYear))) {
+  //   alert('Zadejte, prosím, platný rok narození.');
+  //   return; // ukončení funkce, pokud rok narození není platný
+  // }
 
-  var code = generateCode(firstName, lastName, birthYear);
+  var code = generateCode(firstName, lastName, birthDay);
 
   // vyčištění hodnot v políčkách formuláře po vygenerování ID:
   document.getElementById('jmeno').value = '';
