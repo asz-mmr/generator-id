@@ -43,8 +43,11 @@ function generateCode(firstName, lastName, birthDay) {
     }
   }
 
-  // přidání roku narození na konec vygenerovaného kódu:
-  code += birthDay;
+  // odstranění pomlček z data narození:
+  var birthDayWithoutDashes = birthDay.replace(/-/g, '');
+
+  // přidání data narození na konec vygenerovaného kódu:
+  code += birthDayWithoutDashes;
 
   return code;
 }
